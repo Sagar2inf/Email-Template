@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+    </style>
+
+    <title>Email Template</title>
+    <link rel="stylesheet" href="test.css">
+    <style>
+        @font-face {
+            font-family: "HelveticaNeue";
+            src: url("helvetica-neue-font/HelveticaNeueMedium.otf")format("opentype");
+            /* font-weight: 500; */
+            font-style: normal;
+        }
+        .inter-text {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        }
+        .manrope-text {
+        font-family: "Manrope", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        }
+
+
+        /* Body Styling */
+        body {
+            display: flex;
+            justify-content: center; /* Centers content horizontally */
+            align-items: flex-start; /* Aligns content to the top */
+            min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+            margin: 0; /* Removes default margin */
+            background: white;
+            padding: 20px; /* Adds padding for smaller screens */
+            box-sizing: border-box; /* Ensures padding doesn't affect layout */
+        }
+
+        /* Large Box Styling */
+        .large-box {
+            width: 90%; /* Takes 90% of the parent container's width */
+            max-width: 600px; /* Limits the maximum width for larger screens */
+            height: auto; /* Allows height to adjust based on content */
+            position: relative; /* Allows child elements to use absolute positioning */
+            margin: 20px auto; /* Centers the box horizontally and adds spacing */
+            border-radius: 25px;
+            background: #131416;
+            opacity: 1; /* Fully visible */
+            padding: 20px; /* Adds internal spacing for content */
+            box-sizing: border-box; /* Ensures padding doesn't affect layout */
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .large-box {
+                width: 100%; /* Takes full width on smaller screens */
+                margin: 10px auto; /* Reduces margin for smaller screens */
+                border-radius: 15px; /* Slightly reduces border radius for better aesthetics */
+            }
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 80%;
+            max-width: 184px; /* Limits the maximum width for larger screens */
+            height: auto; /* Maintains aspect ratio */
+            margin: 20px auto 0; /* Centers the logo horizontally and adds spacing */
+            display: block; /* Ensures proper alignment */
+        }
+
+        /* Welcome Text Styling */
+        .welcome-text {
+            text-align: center;
+            font-family: Helvetica, Arial;
+            margin-top: 20px;
+        }
+
+        .welcome-text h1 {
+            text-align: center;
+            font-family: "HelveticaNeue";
+            font-size: 2.625rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 115%; 
+            letter-spacing: -0.07875rem;
+            background: linear-gradient(180deg, #FFF 49.92%, rgba(115, 115, 115, 0.98) 97.17%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .welcome-text span {
+            background: linear-gradient(180deg, #FFF 49.92%, #4285F4 83.69%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Helvetica Neue";
+            font-size: 2.625rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 115%;
+            letter-spacing: -0.07875rem;
+        }
+        .welcome-text p {
+            color: #EFEDFD;
+            text-align: center;
+            leading-trim: both;
+            text-edge: cap;
+            font-family: "Inter" sans-serif;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+
+        @media (max-width: 500px) {
+            .welcome-text h1{
+                font-size: 2rem;
+            }
+            .welcome-text p {
+                width: 13.0625rem;
+                font-size: 0.75rem;
+                margin: 0.875rem auto 0rem;
+                font-weight: 400;
+            }
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 2rem; 
+            padding: 0.563rem 1.5rem 0.5rem 0.563rem;
+        }
+
+        /* Button Styling */
+        .button-first {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px; 
+            background: #4285F4;
+            border: none;
+            border-radius: 38px;
+            cursor: pointer;
+            text-decoration: none;
+            min-width: 160px; 
+            height: auto; 
+            box-sizing: border-box; 
+            color: var(--color-white-solid, #FFF);
+            text-align: center;
+            font-family: "Manrope" sans-serif;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: -0.02rem;
+            transition: background 0.3s ease; 
+
+            /* display: flex;
+            width: 13.8125rem;
+            height: 3.4375rem;
+            padding: 0.5625rem 0.5rem 0.5625rem 1.5rem;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            margin-left: 10rem;
+            border-radius: 2.375rem;
+            background: var(--color-azure-61, #4285F4); */
+            color: var(--color-white-solid, #FFF);
+            text-align: center;
+            font-family: "Inter";
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: -0.02rem;
+        }
+
+        /* Hover Effect */
+        .button-first:hover {
+            background: #357ae8; /* Slightly darker blue on hover */
+        }
+
+        /* Arrow Symbol Styling */
+        .arrow-symbol-1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            width: 2.23113rem;
+            height: 2.23113rem;
+            flex-shrink: 0;
+            margin-right: -0.625rem;
+            margin-left: 0.625rem;
+        }
+
+        .arrow-symbol-1 img {
+            width: 24px; /* Default size of the SVG icon */
+            height: 24px; /* Default size of the SVG icon */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .button-first {
+                font-size: 0.9rem; 
+                min-width: 140px; 
+            }
+
+            .arrow-symbol-1 {
+                width: 35px; /* Smaller size for tablets */
+                height: 35px; /* Smaller size for tablets */
+            }
+
+            .arrow-symbol-1 img {
+                width: 20px; /* Smaller icon size for tablets */
+                height: 20px; /* Smaller icon size for tablets */
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .button-first {
+                font-size: 0.8rem; /* Even smaller font size for mobile */
+                padding: 8px 16px; /* Further reduced padding for mobile */
+                min-width: 120px; /* Further reduced minimum width for mobile */
+            }
+
+            .arrow-symbol-1 {
+                width: 30px; /* Even smaller size for mobile */
+                height: 30px; /* Even smaller size for mobile */
+            }
+
+            .arrow-symbol-1 img {
+                width: 18px; /* Even smaller icon size for mobile */
+                height: 18px; /* Even smaller icon size for mobile */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .button-container {
+                text-align: center;
+                margin: 1.25rem auto 0rem;
+            }
+            .button-first {
+                font-size: 0.875rem; 
+                padding: 0.56rem 1.25rem; 
+            }
+
+            .arrow-symbol-1 {
+                width: 35px;
+                height: 35px; /* Smaller size for tablets */
+            }
+
+            .arrow-symbol-1 img {
+                width: 20px; /* Smaller icon size for tablets */
+                height: 20px; /* Smaller icon size for tablets */
+            }
+        }
+
+
+        /* Video Styling */
+        .video-container {
+            position: relative; /* Allows absolute positioning of child elements */
+            width: 100%; /* Ensures video scales properly */
+            height: auto; /* Use padding-bottom to maintain aspect ratio */
+            padding-bottom: 56.25%;
+            overflow: visible; /* Allows content to spill outside the container */
+            background-position: center; /* Centers the gradient */
+            border-radius: 20px; /* Optional: Adds rounded corners for better aesthetics */
+            position: relative;
+            margin-top: 1.488rem;
+        }
+
+        .background-light {
+            position: absolute;
+            bottom: -269px; /* Positions the background image 10px below the video container */
+            left: 50%;
+            transform: translateX(-50%); /* Centers the background horizontally */
+            width: 100%; /* Make it full width of the container */
+            max-width: 500px; /* Limit the maximum width if needed */
+            z-index: 1; /* Ensures it's behind the video */
+        }
+
+        .background-light img {
+            width: 100%; /* Ensures the image fills the container */
+            height: auto; /* Maintains aspect ratio */
+            object-fit: contain; /* Ensures the entire image is visible */
+        }
+
+        .video-container video {
+            position: absolute; /* Position the video absolutely within the container */
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensures video scales properly */
+            height: 100%; /* Ensures video fills the container */
+            object-fit: cover; /* Ensures proper scaling */
+            z-index: 2; /* Keeps the video above the background */
+            border-radius: 10px; /* Matches the container's border-radius */
+        }
+
+        /* 📱 Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .button {
+                font-size: 0.9rem; /* Reduces font size for smaller screens */
+                padding: 8px 16px; /* Reduces padding for smaller screens */
+            }
+            .arrow-symbol {
+                width: 35px; /* Further reduces size for smaller screens */
+                height: 35px;
+                font-size: 1rem;
+            }
+            .video-container {
+                width: 90%; /* Takes most of the screen width */
+                height: 0; /* Use padding-bottom to maintain aspect ratio */
+                padding-bottom: 56.25%; /* Aspect ratio for 16:9 videos */
+                margin: 1.5rem auto 0; /* Scales spacing proportionally */
+                background-size: 150% 150%; /* Adjusts the gradient size for smaller screens */
+            }
+            
+            .background-light {
+                bottom: -275px; /* Slightly adjust for smaller screens if needed */
+            }
+        }
+
+        @media (max-width: 600px){
+            .background-light {
+                bottom: -258px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .button {
+                font-size: 0.9rem; /* Reduces font size for smaller screens */
+                padding: 8px 16px; /* Reduces padding for smaller screens */
+            }
+            .arrow-symbol {
+                width: 35px; /* Further reduces size for smaller screens */
+                height: 35px;
+                font-size: 1rem;
+            }
+            .video-container {
+                width: 90%; /* Takes most of the screen width */
+                height: 0; /* Use padding-bottom to maintain aspect ratio */
+                padding-bottom: 56.25%; /* Aspect ratio for 16:9 videos */
+                margin: 1.5rem auto 0; /* Scales spacing proportionally */
+                background-size: 150% 150%; /* Adjusts the gradient size for smaller screens */
+            }
+            
+            .background-light {
+                bottom: -170px; /* Slightly adjust for smaller screens if needed */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .video-container {
+                width: 100%; 
+                max-width: 540px;
+                height: auto;
+                margin: 2rem auto 0rem;
+                background-size: 150% 150%;
+            }
+            
+            .background-light {
+                top: 6.8rem;
+            }
+        }
+
+        /* Button Container Styling */
+        .button-group {
+            display: flex; /* Flexbox for horizontal alignment */
+            justify-content: center; /* Centers the buttons horizontally */
+            gap: 0.75rem; /* Reduced gap between buttons */
+            margin-top: 2rem; /* Adds spacing below the video */
+            flex-wrap: nowrap; /* Prevents buttons from wrapping */
+            overflow-x: auto; /* Allows horizontal scrolling if needed */
+            padding-bottom: 0.5rem; /* Adds padding for scrollable area */
+            gap: 1.206rem;
+        }
+
+        /* Individual Button Styling */
+        .button-group .button {
+            display: flex;
+            align-items: center; /* Vertically centers the content */
+            justify-content: space-between; /* Spaces out the content */
+            padding: 0.5rem 0.75rem; /* Responsive padding */
+            background: #191919; /* Dark background color */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            border-radius: 2rem; /* Rounded corners */
+            color: white; /* Text color */
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-size: 0.875rem; /* Default font size for desktop */
+            font-weight: 600; /* Makes the text bold */
+            line-height: normal;
+            letter-spacing: -0.035rem;
+            cursor: pointer; /* Pointer cursor on hover */
+            text-decoration: none; /* Removes underline from the link */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+            min-width: 120px; /* Minimum width for smaller screens */
+            height: auto; /* Adjusts height based on content */
+            flex-shrink: 0; /* Prevents buttons from shrinking too much */
+            z-index: 2;
+        }
+
+        .button-group .button:hover {
+            transform: scale(1.05); /* Slightly enlarges the button on hover */
+        }
+
+        /* Icon Styling */
+        .button-group .icon {
+            width: 1.5rem; /* Default size for desktop */
+            height: 1.5rem; /* Default size for desktop */
+            background-size: cover; /* Ensures the icon fits within the dimensions */
+            background-repeat: no-repeat; /* Prevents the icon from repeating */
+            margin-right: 0.5rem; /* Adds spacing between the icon and text */
+        }
+
+        /* Arrow Symbol Styling */
+        .button-group .arrow-symbol-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px; /* Default size for desktop */
+            height: 24px; /* Default size for desktop */
+            background: white; /* Circle background color */
+            border-radius: 50%; /* Makes it a perfect circle */
+            margin-left: 0.5rem; /* Reduced spacing for smaller screens */
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for better visibility */
+        }
+
+        .arrow-symbol-2 img {
+            width: 16px; /* Size of the SVG icon */
+            height: 16px; /* Size of the SVG icon */
+        }
+
+        /* YouTube Button Icon */
+        .button-group .youtube-icon {
+            background-image: url('Images/youtube-icon.svg'); /* Path to YouTube icon */
+        }
+
+        /* Instagram Button Icon */
+        .button-group .instagram-icon {
+            background-image: url('Images/Instagram-icon.svg'); /* Path to Instagram icon */
+        }
+
+        /* Telegram Button Container Styling */
+        .telegram-button-container {
+            display: flex;
+            justify-content: center; /* Centers the button horizontally */
+            margin-top: 0.706rem; /* Reduced spacing between groups */
+        }
+
+        /* Telegram Button Styling */
+        .telegram-button {
+            width: 90%; /* Takes 90% of the parent container's width */
+            max-width: 600px; /* Limits the maximum width for larger screens */
+            height: auto; /* Adjusts height based on content */
+            display: flex;
+            align-items: center; /* Vertically centers the content */
+            justify-content: space-between; /* Spaces out the content */
+            padding: 0.75rem 1rem; /* Responsive padding */
+            background: #191919; /* Dark background color */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            border-radius: 2rem; /* Rounded corners */
+            color: white; /* Text color */
+            font-family: Arial, sans-serif;
+            font-size: 1rem; /* Default font size for desktop */
+            font-weight: bold; /* Makes the text bold */
+            cursor: pointer; /* Pointer cursor on hover */
+            text-decoration: none; /* Removes underline from the link */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+            z-index: 2;
+        }
+
+        .telegram-button:hover {
+            transform: scale(1.02); /* Slightly enlarges the button on hover */
+        }
+
+        .icon-name-1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.96rem;
+        }
+
+        /* Telegram Icon Styling */
+        .icon-name-1 .telegram-icon {
+            background-image: url('Images/Telegram-icon.svg');
+            background-size: cover; 
+            background-repeat: no-repeat;
+            display: flex;
+            width: 1.75113rem;
+            height: 1.75113rem;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .icon-name-1 span {
+            display: flex;
+            align-items: center;
+            font-size: 0.875rem;
+            font-family: "Inter" sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: -0.035rem;
+            line-height: normal;
+        }
+
+        .grouping-a-b {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem; 
+        }
+        /* Box A Styling */
+        .grouping-a-b .box-a {
+            order: 1;
+            display: flex;
+            align-items: center; /* Vertically centers the content */
+            justify-content: center; /* Horizontally centers the content */
+            padding: 0.5rem 1rem; /* Responsive padding */
+            border-radius: 2rem; /* Rounded corners */
+            background: rgba(151, 151, 151, 0.2); /* Semi-transparent gray background */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+            font-family: "Inter", sans-serif;
+            font-size: 0.96431rem; /* Responsive font size */
+            font-style: normal;
+            font-weight: 500; /* Makes the text bold */
+            line-height: 150%;
+            letter-spacing: -0.02413rem;
+            color: white; /* Text color */
+            margin-left: auto; /* Pushes it to the right */
+            margin-right: 1rem; /* Adds spacing between boxes */
+        }
+
+        /* Box B Styling */
+        .grouping-a-b .box-b {
+            order: 2;
+            display: flex;
+            align-items: center; /* Vertically centers the content */
+            justify-content: space-between; /* Spaces out the content */
+            padding: 0.5rem 1rem; /* Responsive padding */
+            border-radius: 2rem; /* Rounded corners */
+            background: #2F93F5; /* Blue background */
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-size: 0.96431rem; /* Responsive font size */
+            letter-spacing: -0.01931rem;
+            font-weight: 700; /* Makes the text bold */
+            color: white; /* Text color */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        /* Arrow Symbol Styling (inside Box B) */
+        .grouping-a-b .box-b .arrow-symbol-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px; /* Default size for desktop */
+            height: 24px; /* Default size for desktop */
+            background: white; /* Circle background color */
+            border-radius: 50%; /* Makes it a perfect circle */
+            margin-left: 0.5rem; /* Reduced spacing for smaller screens */
+            margin-right: -0.5rem;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for better visibility */
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .button-group {
+                gap: 0.35rem; /* Further reduces gap for smaller screens */
+            }
+
+            .button-group .button {
+                font-size: 0.625rem; /* Reduces font size for smaller screens */
+                padding: 0.5rem 0.75rem; /* Further reduces padding for smaller screens */
+                min-width: 100px; /* Further reduces minimum width for smaller screens */
+            }
+
+            .button-group .icon,
+            .button-group .arrow-symbol-2 {
+                width: 1.25rem; /* Slightly reduced size for smaller screens */
+                height: 1.25rem; 
+            }
+
+            .arrow-symbol-2 img {
+                width: 12px; 
+                height: 12px;
+            }
+
+            .telegram-button {
+                width: 75%;
+                /* font-size: 0.55rem;  */
+                padding: 0.20rem;
+            }
+            .icon-name-1 {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-left: 0.1rem;
+            }
+            .icon-name-1 .telegram-icon {
+                width: 0.908rem; 
+                height: 0.908rem;
+            }
+            .icon-name-1 .tele-comp-name-1{
+                color: #FFF;
+                text-align: center;
+                leading-trim: both;
+                text-edge: cap;
+                font-family: "Inter", sans-serif;
+                font-size: 0.625rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: -0.025rem;
+
+            }
+            .grouping-a-b {
+                gap: 0.31rem;
+            }
+            .grouping-a-b .box-a {
+                font-size: 0.5rem; 
+                padding: 0.25rem 0.7rem 0.25rem 0.7rem; 
+            }
+            .grouping-a-b .box-b {
+                font-size: 0.5rem; 
+                padding: 0.25rem 0.7rem 0.25rem 0.7rem; 
+                margin-right: 0.2rem;
+                margin-left: -0.2rem;
+            }
+
+            .box-b .arrow-symbol-2 {
+                width: 1.2rem; /* Further reduces size for smaller screens */
+                height: 1.2rem;
+                margin-right: 0.1rem;
+                margin-left: -0.1rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .button-group {
+                gap: 0.625rem; /* Further reduces gap for smaller screens */
+                margin: 2rem auto 0rem;
+            }
+
+            .button-group .button {
+                font-size: 0.625rem;
+                font-weight: 600;
+                letter-spacing: -0.025;
+                padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+            }
+            .button-group .icon {
+                width: 0.925rem;
+                height: 0.925rem;
+            }
+            .button-group .arrow-symbol-2 {
+                width: 1.1rem; 
+                height: 1.1rem; 
+            }
+
+            .telegram-button-container{
+                margin: 0.125rem auto 0rem;
+            }
+            .telegram-button {
+                font-size: 0.625rem; 
+            }
+            .icon-name-1 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .icon-name-1 .telegram-icon {
+                width: 0.908rem; 
+                height: 0.908rem;
+                display: flex;
+                align-items: center;
+            }
+            .icon-name-1 .tele-comp-name-1{
+                font-size: 0.625rem;
+                /* margin-left: -2rem; */
+            }
+            .grouping-a-b .box-a {
+                font-size: 0.5rem;
+                padding: 0.34rem 0.3rem;
+                margin-left: 0.1rem;
+                margin-right: -0.1rem;
+            }
+            .grouping-a-b .box-b {
+                font-size: 0.5rem; 
+                padding: 0.1rem 0.2rem 0.1rem 0.3rem;
+                margin-right: 0.15rem;
+                margin-left: 0.3rem;
+            }
+
+            .grouping-a-b .box-b .arrow-symbol-2 {
+                width: 1.1rem; 
+                height: 1.1rem;
+                margin-right: 0.1rem;
+            }
+            
+        }
+
+        @media (max-width: 400px) {
+            .button-group {
+                gap: 0.625rem; 
+                margin: 2rem auto 0rem;
+            }
+
+            .button-group .button {
+                font-size: 0.625rem;
+                font-weight: 600;
+                letter-spacing: -0.025;
+                padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+            }
+            .button-group .icon {
+                width: 0.925rem;
+                height: 0.925rem;
+            }
+            .button-group .arrow-symbol-2 {
+                width: 1.1rem; 
+                height: 1.1rem; 
+            }
+            /* telegram styling */
+            .telegram-button-container{
+                width: 120%;
+                margin-top: 0.125rem;
+                margin-left: -1.7rem;
+            }
+            .icon-name-1 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            .telegram-button {
+                font-size: 0.50rem; 
+            }
+            
+            .icon-name-1 .telegram-icon {
+                display: flex;
+                width: 0.908rem; 
+                height: 0.908rem;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+            }
+            .icon-name-1 .tele-comp-name-1 {
+                font-size: 0.625rem;
+                letter-spacing: -0.025rem;
+            }
+            .grouping-a-b {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            .grouping-a-b .box-a {
+                align-items: center;
+                justify-content: center;
+                font-size: 0.5rem;
+                padding: 0rem;
+                margin-left: 0.1rem;
+                margin-right: -0.1rem;
+                padding: 0.3rem 0.2rem 0.3rem 0.2rem;
+            }
+            .grouping-a-b .box-b {
+                font-size: 0.5rem; 
+                padding: 0rem;
+                align-items: center;
+                justify-content: center;
+                padding: 0.3rem 0.2rem 0.3rem 0.2rem;
+            }
+
+            .grouping-a-b .box-b .arrow-symbol-2 {
+                width: 1.1rem; 
+                height: 1.1rem;
+                margin-right: 0.13rem;
+                margin-left: 0.2rem;
+            }
+            
+        }
+
+
+
+        /* Built for Storytellers Box Styling */
+        .built-for-storytellers-box {
+            display: flex;
+            align-items: center; /* Vertically centers the content */
+            justify-content: center; /* Horizontally centers the content */
+            gap: 0.5rem; /* Space between the star icon and text */
+            padding: 0.75rem 0.5rem; /* Responsive padding */
+            border-radius: 2rem; /* Rounded corners */
+            background: rgba(151, 151, 151, 0.2); /* Semi-transparent gray background */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+            margin: 1.803rem auto 0; /* Centers the box horizontally and adds spacing */
+            max-width: 200px; /* Limits the maximum width for larger screens */
+            color: rgba(255, 255, 255, 0.90);
+            text-align: center;
+            leading-trim: both;
+            text-edge: cap;
+            font-feature-settings: 'liga' off;
+            font-family: "Inter" sans-serif;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 1.3125rem */
+            letter-spacing: -0.02188rem;
+        }
+
+        /* Star Icon Styling */
+        .star-icon {
+            width: 2rem;
+            height: 2rem;
+            background-image: url('Images/shining-star-removebg-preview.png');
+            background-size: cover;
+            background-repeat: no-repeat; 
+        }
+
+        /* AI Tools Box Styling */
+        .ai-tools-box {
+            display: flex;
+            flex-direction: column; /* Stacks content vertically */
+            align-items: center; /* Horizontally centers the content */
+            justify-content: center; /* Vertically centers the content */
+            gap: 0rem; /* Space between the text lines */
+            margin: 1.175rem auto 0; 
+            max-width: 600px; /* Limits the maximum width for larger screens */
+            text-align: center; /* Centers the text */
+        }
+
+        /* First Line of Text Styling */
+        .ai-tools-box h3 {
+            text-align: center;
+            font-family: "HelveticaNeue";
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 115%; /* 2.3rem */
+            letter-spacing: -0.06rem;
+            background: linear-gradient(180deg, #FFF 49.92%, rgba(115, 115, 115, 0.98) 97.17%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0.3rem;
+        }
+
+
+        /* Second Line of Text Styling */
+        .ai-tools-box p {
+            color: #898989;
+            text-align: center;
+            leading-trim: both;
+            text-edge: cap;
+            font-family: "Inter" sans-serif;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            margin: 0.6rem auto 0; 
+        }
+
+        /* Bold Spans Styling */
+        .ai-tools-box p span {
+            color: #C5C5C5;
+            leading-trim: both;
+            text-edge: cap;
+            font-family: "Inter" sans-serif;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .built-for-storytellers-box {
+                font-size: 0.8rem; /* Reduces font size for smaller screens */
+                padding: 0.5rem 1rem; /* Reduces padding for smaller screens */
+            }
+
+            .star-icon {
+                width: 1.25rem; /* Further reduces size for smaller screens */
+                height: 1.25rem;
+            }
+
+            .ai-tools-box h3 {
+                font-size: 1.375rem; /* Reduces font size for smaller screens */
+                letter-spacing: -0.04125rem;
+                margin-top: 0.48rem;
+            }
+
+            .ai-tools-box p {
+                font-size: 0.75rem; /* Reduces font size for smaller screens */
+            }
+            .ai-tools-box p span {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 500px){
+            .built-for-storytellers-box {
+                font-size: 0.625rem; 
+                width: 50%;
+                margin-top: 2.625rem;
+            }
+
+            .star-icon {
+                width: 1.25rem; /* Further reduces size for smaller screens */
+                height: 1.25rem;
+            }
+
+            .ai-tools-box h3 {
+                font-size: 1.375rem; /* Reduces font size for smaller screens */
+                line-height: 115%;
+                letter-spacing: -0.041rem;
+                font-weight: 500;
+                text-align: center;
+                margin-top: -0.65rem;
+            }
+
+            .ai-tools-box p {
+                width: 100%;
+                max-width: 17.375rem;
+                font-size: 0.65rem; /* Reduces font size for smaller screens */
+                letter-spacing: -0.015;
+                font-weight: 300;
+                line-height: 121.96%;
+                text-align: center;
+                margin-top: 0.52rem;
+            }
+            .ai-tools-box p span {
+                font-size: 0.65rem;
+            }
+        }
+
+        @media (max-width: 400px){
+            .built-for-storytellers-box {
+                font-size: 0.625rem; 
+                width: 50%;
+                margin-top: 2.625rem;
+            }
+
+            .star-icon {
+                width: 1.25rem; /* Further reduces size for smaller screens */
+                height: 1.25rem;
+            }
+
+            .ai-tools-box h3 {
+                font-size: 1.375rem; /* Reduces font size for smaller screens */
+                line-height: 115%;
+                letter-spacing: -0.041rem;
+                font-weight: 500;
+                text-align: center;
+                margin-top: -0.65rem;
+            }
+
+            .ai-tools-box p {
+                width: 100%;
+                max-width: 17.375rem;
+                font-size: 0.62rem; /* Reduces font size for smaller screens */
+                letter-spacing: -0.015;
+                font-weight: 300;
+                line-height: 121.96%;
+                text-align: center;
+                margin-top: 0.52rem;
+            }
+            .ai-tools-box p span {
+                font-size: 0.62rem;
+            }
+        }
+
+        /* Video Grid Container Styling */
+        .video-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            grid-template-rows: repeat(2, 1fr); /* Two rows */
+            gap: 1rem 0.625rem; /* Space between video containers */
+            margin: 3rem auto 0; /* Centers the box horizontally and adds spacing */
+            max-width: 600px; /* Limits the maximum width for larger screens */
+        }
+
+        /* Individual Video Container Styling */
+        .video-item {
+            position: relative; /* Allows positioning of child elements */
+            width: 100%; /* Takes full width of the grid cell */
+            aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
+            border-radius: 1rem; /* Rounded corners */
+            background: #191919; /* Dark background color */
+            border: 1px solid #232426; /* Semi-transparent gray border */
+            overflow: hidden; /* Ensures the thumbnail fits within the container */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+
+        .video-item:hover {
+            transform: scale(1.05); /* Slightly enlarges the video on hover */
+        }
+
+        /* Thumbnail Styling */
+        .video-item img {
+            width: 100%; /* Ensures the thumbnail fills the container */
+            height: 100%; /* Ensures the thumbnail fills the container */
+            object-fit: cover; /* Ensures the thumbnail scales properly */
+        }
+
+        /* Play Icon Overlay */
+        .video-item::before {
+            content: '▶'; /* Play icon */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem; /* Responsive font size */
+            color: rgba(244, 239, 239, 0.8); /* White color with transparency */
+            pointer-events: none; /* Ensures the pseudo-element doesn't interfere with clicks */
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .video-grid-container {
+                gap: 0.75rem; 
+            }
+
+            .video-item::before {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .video-grid-container {
+                gap: 0.625rem; 
+                margin-top: 1.5rem;
+            }
+
+            .video-item::before {
+                font-size: 1.5rem;
+            }
+        }
+        /* GIF Box Styling */
+        .gif-box {
+            display: flex;
+            justify-content: center; /* Centers the box horizontally */
+            margin: 0.724rem auto 0; /* Adds spacing below the previous content */
+            width: 100%; /* Takes 90% of the parent container's width */
+            max-width: 540px; /* Limits the maximum width for larger screens */
+            aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
+            border-radius: 1rem; /* Rounded corners */
+            overflow: hidden; /* Ensures the GIF fits within the container */
+        }
+
+        /* GIF Styling */
+        .gif-box img {
+            width: 100%; /* Ensures the GIF fills the container */
+            height: 100%; /* Ensures the GIF fills the container */
+            object-fit: cover; /* Ensures the GIF scales properly */
+        }
+
+        /* Default Behavior for Desktop */
+        .gif-box img.mobile-gif {
+            display: none; /* Hides gif2 (mobile-gif) on desktop by default */
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .gif-box{
+                margin-top: 0.625rem;
+            }
+            .gif-box img.desktop-gif {
+                display: none; /* Hides gif1 (desktop-gif) on mobile */
+            }
+            .gif-box img.mobile-gif {
+                display: block; /* Shows gif2 (mobile-gif) on mobile */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .gif-box{
+                margin-top: 0.625rem;
+            }
+            .gif-box img.desktop-gif {
+                display: none; 
+            }
+            .gif-box img.mobile-gif {
+                display: block;
+            }
+        }
+        /* Container for Two Boxes */
+        .two-boxes-container {
+            display: flex;
+            justify-content: center; /* Centers the container horizontally */
+            align-items: center; /* Ensures vertical alignment */
+            gap: 0.625rem; /* Space between the two boxes */
+            margin: 0.625rem auto 0; /* Adds spacing below the GIF box */
+            width: 100%; /* Takes 90% of the parent container's width */
+            max-width: 540px; /* Limits the maximum width for larger screens */
+            flex-wrap: nowrap; /* Prevents wrapping, ensuring boxes stay in one row */
+        }
+
+        /* Individual Box Styling */
+        .box-item {
+            flex: 0 1 calc(50% - 0.5rem); /* Ensures each box takes half the container width with gap consideration */
+            aspect-ratio: 1 / 1; /* Maintains a square aspect ratio */
+            border-radius: 1rem; /* Rounded corners */
+            background: #191919; /* Dark background color */
+            border: 1px solid #303031; /* Semi-transparent gray border */
+            overflow: hidden; /* Ensures the image fits within the container */
+            display: flex; /* Flexbox for internal alignment */
+            align-items: center; /* Vertically centers the content */
+            justify-content: center; /* Horizontally centers the content */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+            box-sizing: border-box; /* Important to include padding and border in width calculation */
+        }
+
+        .box-item:hover {
+            transform: scale(1.05); /* Slightly enlarges the box on hover */
+        }
+
+        /* Image Styling */
+        .box-item img {
+            width: 100%; /* Ensures the image fills the container */
+            height: 100%; /* Ensures the image fills the container */
+            object-fit: cover; /* Ensures the image scales properly */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .two-boxes-container {
+                gap: 0.625rem;
+                margin-top: 0.625rem;
+            }
+
+            .box-item {
+                flex: 0 1 calc(50% - 0.375rem); /* Maintains two boxes in a row with reduced gap */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .two-boxes-container {
+                gap: 0.625rem;
+                margin-top: 0.625rem;
+            }
+
+            .box-item {
+                flex: 0 1 calc(50% - 0.375rem);
+            }
+        }
+
+        /* AI Character Creator GIF Box Styling */
+        .gif-AI-Character-Creator {
+            display: flex;
+            justify-content: center; /* Centers the box horizontally */
+            margin: 0.625rem auto 0; /* Adds spacing below the previous content */
+            width: 100%; /* Takes full width of the parent container */
+            max-width: 540px; /* Limits the maximum width for larger screens */
+            aspect-ratio: 16 / 11; /* Maintains a 16:11 aspect ratio */
+            border-radius: 1rem; /* Rounded corners */
+            overflow: hidden; /* Ensures the GIF fits within the container */
+        }
+
+        /* GIF Styling */
+        .gif-AI-Character-Creator img {
+            width: 100%; /* Ensures the GIF fills the container */
+            height: 100%; /* Ensures the GIF fills the container */
+            object-fit: cover; /* Ensures the GIF scales properly */
+        }
+
+        /* Default Behavior for Desktop */
+        .gif-AI-Character-Creator img.mobile-gif {
+            display: none; /* Hides mobile GIF on desktop by default */
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .gif-AI-Character-Creator img.desktop-gif {
+                display: none; /* Hides desktop GIF on mobile */
+            }
+            .gif-AI-Character-Creator img.mobile-gif {
+                display: block; /* Shows mobile GIF on mobile */
+            }
+        }
+
+        @media (max-width: 400px){
+            .gif-AI-Character-Creator {
+                margin-top: 0.625rem;
+            }
+            .gif-AI-Character-Creator img.desktop-gif {
+                display: none;
+            }
+            .gif-AI-Character-Creator img.mobile-gif {
+                display: block;
+            }
+        }
+
+        /* Text and Image Box Styling */
+        .text-image-box {
+            display: flex;
+            flex-direction: column; /* Stacks content vertically */
+            align-items: center; /* Centers content horizontally */
+            justify-content: space-between; /* Spaces out the text and image */
+            margin: 0.625rem auto 0; /* Adds spacing below the previous content */
+            width: 100%; /* Takes 90% of the parent container's width */
+            max-width: 540px; /* Limits the maximum width for larger screens */
+            border-radius: 1rem; /* Rounded corners */
+            background: #191919; /* Dark background color */
+            border: 1px solid #303031; /* Semi-transparent gray border */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+        }
+
+        /* Text Styling */
+        .text-image-box .text {
+            width: 70%;
+            text-align: center;
+            font-family: "HelveticaNeue";
+            font-size: 1.375rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 115%; /* 1.58125rem */
+            letter-spacing: -0.01375rem;
+            background: linear-gradient(180deg, #FFF 49.92%, rgba(115, 115, 115, 0.98) 97.17%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 2.5rem 4.438rem 0 4.438rem; 
+
+        }
+
+        /* Bold Span Styling */
+        .text-image-box .text span {
+            background: linear-gradient(180deg, #FFF 49.92%, rgba(115, 115, 115, 0.98) 97.17%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "HelveticaNeue";
+            font-size: 1.375rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 115%;
+            letter-spacing: -0.01375rem;
+        }
+
+        /* Image Styling */
+        .text-image-box .image img {
+            width: 100%; /* Ensures the image scales properly */
+            height: auto; /* Maintains aspect ratio */
+            object-fit: cover; 
+            margin: 1.625rem auto 0rem;
+        }
+
+        @media (max-width: 500px) {
+            .text-image-box{
+                margin-top: 0.625rem;
+            }
+            .text-image-box .text {
+                font-size: 1rem;
+                letter-spacing: -0.01rem;
+                margin: 0.961rem 1.438rem 0rem 1.438rem;
+            }
+            .text-image-box .text span {
+                font-size: 1rem;
+                letter-spacing: -0.01rem;
+            }
+            .text-image-box .image{
+                margin-top: -0.725rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .text-image-box{
+                margin-top: 0.625rem;
+            }
+            .text-image-box .text {
+                width: 90%;
+                font-size: 1rem;
+                letter-spacing: -0.01rem;
+                margin: 0.961rem 1.438rem 0rem 1.438rem;
+            }
+            .text-image-box .image{
+                margin-top: -0.725rem;
+            }
+        }
+
+        /* Best AI Tool Box Styling */
+        .best-ai-tool-box {
+            display: flex;
+            flex-direction: column; /* Stacks content vertically */
+            align-items: center; /* Centers content horizontally */
+            justify-content: space-between; /* Spaces out the text and button */
+            margin: 0.625rem auto 0; /* Adds spacing below the previous content */
+            width: 100%; /* Takes 90% of the parent container's width */
+            max-width: 540px; /* Limits the maximum width for larger screens */
+            border-radius: 1rem; /* Rounded corners */
+            background: #1e2430; /* Fallback background color */
+            background-image: url('Images/grid.png'); /* Add your grid image here */
+            background-size: cover; /* Ensures the image covers the entire box */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            border: 1px solid #17181a; /* Semi-transparent gray border */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            /* gap: 1rem; */
+            position: relative; /* Allows positioning of pseudo-elements */
+            overflow: hidden; /* Ensures the light effects don't overflow outside the box */
+        }
+
+        /* Text Styling */
+        .best-ai-tool-box .text {
+            font-family: 'HelveticaNeue';
+            font-size: 1.625rem; /* Responsive font size */
+            font-weight: 400; /* Regular font weight */
+            font-style: normal;
+            line-height: 115%; /* Line height */
+            letter-spacing: -0.016;
+            text-align: center; /* Centers the text */
+            background: linear-gradient(180deg, #FFFFFF 49.92%, rgba(115, 115, 115, 0.98) 97.17%);
+            -webkit-background-clip: text; /* Clips the gradient to the text */
+            color: transparent; /* Makes the text transparent to show the gradient */
+            margin: 2.781rem auto 0rem; /* Removes default margin */
+            z-index: 1; /* Places it above the pseudo-elements */
+        }
+
+        /* Button Styling */
+        .best-ai-tool-box .button {
+            display: flex;
+            justify-content: space-between; /* Spaces out the text and arrow */
+            align-items: center; /* Vertically centers the content */
+            padding: 0.5rem 1rem; /* Responsive padding */
+            border-radius: 2rem; /* Rounded corners */
+            background: #4285F4; /* Azure blue background */
+            color: white; /* Text color */
+            text-decoration: none; /* Removes underline from links */
+            font-family: 'HelveticaNeue';
+            font-size: 1rem; /* Responsive font size */
+            font-weight: 600; /* Regular font weight */
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: -0.02;
+            cursor: pointer; /* Pointer cursor on hover */
+            z-index: 1; /* Places it above the pseudo-elements */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+            margin: 1.688rem auto 2.719rem;
+        }
+
+        .best-ai-tool-box .button:hover {
+            transform: scale(1.05); /* Slightly enlarges the button on hover */
+        }
+
+        /* Arrow Symbol Styling */
+        .best-ai-tool-box .button .arrow-symbol-3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px; /* Fixed size for better responsiveness */
+            height: 30px; /* Fixed size for better responsiveness */
+            background: white; /* Circle background color */
+            border-radius: 50%; /* Makes the background circular */
+            margin-left: 10px; /* Spacing between text and icon */
+        }
+
+        .best-ai-tool-box .button .arrow-symbol-3 img {
+            width: 16px; /* Size of the SVG/PNG icon */
+            height: 16px; /* Size of the SVG/PNG icon */
+            object-fit: contain; /* Ensures the image fits within the circle */
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .best-ai-tool-box .text {
+                font-size: 1rem; /* Reduces font size for smaller screens */
+            }
+
+            .best-ai-tool-box .button {
+                font-size: 0.875rem; /* Reduces font size for smaller screens */
+                padding: 0.5rem 0.75rem; /* Reduces padding for smaller screens */
+            }
+
+            .best-ai-tool-box .button .arrow-symbol-3 {
+                width: 24px; /* Adjusts size for smaller screens */
+                height: 24px;
+            }
+
+            .best-ai-tool-box .button .arrow-symbol-3 img {
+                width: 12px; /* Scales down the icon for smaller screens */
+                height: 12px;
+            }
+        }
+
+        @media (max-width: 500px){
+            .best-ai-tool-box{
+                margin-top: 0.625rem;
+            }
+            .best-ai-tool-box .text {
+                font-size: 1.125rem; /* Reduces font size for smaller screens */
+                line-height: 115%;
+                margin-top: 1.5rem;
+            }
+
+            .best-ai-tool-box .button {
+                font-size: 0.688rem; /* Reduces font size for smaller screens */
+                padding: 0.5rem 0.75rem; /* Reduces padding for smaller screens */
+                margin-top: 0.943rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .best-ai-tool-box .button .arrow-symbol-3 {
+                width: 24px; /* Adjusts size for smaller screens */
+                height: 24px;
+            }
+
+            .best-ai-tool-box .button .arrow-symbol-3 img {
+                width: 12px; /* Scales down the icon for smaller screens */
+                height: 12px;
+            }
+        }
+
+        @media (max-width: 400px){
+            .best-ai-tool-box{
+                margin-top: 0.625rem;
+            }
+            .best-ai-tool-box .text {
+                font-size: 1.125rem; /* Reduces font size for smaller screens */
+                line-height: 115%;
+                margin-top: 1.5rem;
+            }
+
+            .best-ai-tool-box .button {
+                font-size: 0.688rem; /* Reduces font size for smaller screens */
+                padding: 0.5rem 0.75rem; /* Reduces padding for smaller screens */
+                margin-top: 0.943rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .best-ai-tool-box .button .arrow-symbol-3 {
+                width: 24px; /* Adjusts size for smaller screens */
+                height: 24px;
+            }
+
+            .best-ai-tool-box .button .arrow-symbol-3 img {
+                width: 12px; /* Scales down the icon for smaller screens */
+                height: 12px;
+            }
+        }
+
+
+        /* Community Box Styling */
+        .community-box {
+            display: flex;
+            flex-direction: column; /* Stacks content vertically */
+            align-items: center; /* Centers content horizontally */
+            justify-content: space-between; /* Spaces out the content */
+            margin: 0.625rem auto 0; /* Adds spacing below the previous content */
+            width: 100%; /* Takes 90% of the parent container's width */
+            max-width: 540px; /* Limits the maximum width for larger screens */
+            border-radius: 1rem; /* Rounded corners */
+            background: #16191D; /* Dark background color */
+            border: 1px solid #303031; /* Semi-transparent gray border */
+            position: relative; /* Allows positioning of pseudo-elements */
+            overflow: hidden; /* Ensures the circles don't overflow outside the box */
+            height: 30rem;
+        }
+
+        .left-background {
+            position: relative;
+            left: -6.7rem;
+            top: -1.5rem;
+        }
+        .right-background {
+            position: relative;
+            right: -5.45rem;
+            top: -17.1rem;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .community-box {
+                width: 90%;
+                padding: 1rem;
+                /* height: 25rem; */
+            }
+            .left-background {
+                position: relative;
+                left: -6.2rem;
+            }
+            .right-background {
+                position: relative;
+                right: -5rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .community-box {
+                width: 93%;
+                padding: 1rem;
+            }
+            .left-background {
+                position: relative;
+                left: -6rem;
+            }
+            .right-background {
+                position: relative;
+                right: -6rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .community-box {
+                margin-top: 0.625rem;
+                width: 88.5%; 
+                max-width: 540px;
+                height: 28rem;
+                border-radius: 1rem;
+                background: #16191D; /* Dark background color */
+                border: 1px solid #303031; /* Semi-transparent gray border */
+                position: relative;
+                overflow: hidden; 
+            }     
+            .left-background {
+                position: relative;
+                left: -1rem;
+            }
+            .right-background {
+                position: relative;
+                right: -1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .community-box {
+                margin-top: 0.625rem;
+                width: 88.5%; 
+                max-width: 540px;
+                height: 25rem;
+                border-radius: 1rem;
+                background: #16191D; /* Dark background color */
+                border: 1px solid #303031; /* Semi-transparent gray border */
+                position: relative;
+                overflow: hidden; 
+            }     
+            .left-background {
+                position: relative;
+                left: -1rem;
+            }
+            .right-background {
+                position: relative;
+                right: -1rem;
+            }
+        }
+
+        /* Header Text Styling */
+        .community-box .header-text {
+            font-family: 'HelveticaNeue';
+            font-style: normal;
+            font-size: 1.625rem; /* Responsive font size */
+            font-weight: 400; /* Regular font weight */
+            line-height: 115%; /* Responsive line height */
+            letter-spacing: -0.016em; /* Letter spacing */
+            text-align: center; /* Centers the text */
+            background: linear-gradient(180deg, #FFFFFF 49.92%, rgba(115, 115, 115, 0.98) 97.17%);
+            -webkit-background-clip: text; /* Clips the gradient to the text */
+            color: transparent; /* Makes the text transparent to show the gradient */
+            position: relative; /* Allows fine-tuning of position */
+            z-index: 1; /* Ensures the text is above the pseudo-elements */
+            top: -29.8rem;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .community-box .header-text {
+                width: 100%;
+                font-size: 1.5rem; /* Reduces font size for smaller screens */
+                line-height: 115%; /* Adjusts line height for better readability */
+                letter-spacing: -0.01rem;
+                position: relative;
+                top: -30.871rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .community-box .header-text {
+                width: 90%;
+                font-size: 0.98rem;
+            } 
+        }
+        @media (max-width: 400px) {
+            .community-box .header-text {
+                width: 100%;
+                font-size: 1rem;
+            }
+        }
+
+        /* Container for Three Boxes */
+        .social-boxes-container {
+            display: flex; /* Flexbox for horizontal alignment */
+            gap: 0.625rem; /* Space between the boxes */
+            align-items: flex-start; /* Aligns boxes at the top */
+            justify-content: center; /* Centers the boxes horizontally */
+            flex-wrap: wrap; /* Allows boxes to wrap on smaller screens */
+            position: relative;
+            top: -28.6rem;
+        }
+
+        /* Parent Container - Social Box */
+        .social-box {
+            width: calc(33.33% - 1rem); /* Takes one-third of the container's width, minus gap */
+            min-width: 150px; /* Ensures it doesn't shrink too much */
+            max-width: 400px; /* Prevents it from being too large */
+            border-radius: 1.05rem; /* Rounded corners */
+            background: rgba(25, 25, 25, 0.6); /* Semi-transparent dark background */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            display: flex; /* Enables flexbox */
+            flex-direction: column; /* Stacks content vertically */
+            justify-content: space-between; /* Spaces out the content */
+            align-items: center; /* Centers content horizontally */
+            padding-bottom: 0.75rem;
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+
+        .social-box:hover {
+            transform: scale(1.05); /* Slightly enlarges the box on hover */
+        }
+
+        /* Header Inside Social Box */
+        .social-box .header {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.75rem; /* Responsive font size */
+            font-weight: 600; /* Regular font weight */
+            line-height: 150%; /* Responsive line height */
+            letter-spacing: -0.019;
+            text-align: center; /* Centers the text */
+            background: rgba(151, 151, 151, 0.24); /* Semi-transparent gray background */
+            padding: 0.469rem; /* Responsive padding */
+            border-radius: 1rem 1rem 0rem 0rem; /* Matches the radius of the social box */
+            margin-bottom: 0.75rem;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding is included in width calculation */
+        }
+
+        /* Icon and Text Styling */
+        .social-box .icon-text {
+            display: flex; /* Flexbox for alignment */
+            flex-direction: column; /* Stacks icon and text vertically */
+            gap: 0.563rem; 
+            position: relative;
+            left: -1.34rem;
+        }
+
+        /* Icon Styling */
+        .social-box .icon-text img {
+            width: 1.8rem; /* Responsive size */
+            height: 1.8rem; /* Responsive size */
+        }
+
+        /* Text Below Icon Styling */
+        .social-box .icon-text span {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem; /* Responsive font size */
+            font-weight: 300; /* Regular font weight */
+            color: white; /* White text color */
+            text-align: center; /* Centers the text */
+        }
+
+        /* Button Styling */
+        .social-box .button {
+            width: 85%; /* Default width */
+            height: 1.75rem;
+            border-radius: 0.5rem; /* Rounded corners */
+            font-family: 'Inter', sans-serif;
+            font-size: 0.625rem; /* Responsive font size */
+            text-align: center; /* Centers the text */
+            line-height: 1; /* Aligns text vertically */
+            cursor: pointer; /* Pointer cursor */
+            color: rgb(7, 7, 7); /* Dark text color */
+            background: #f1f1f1; /* Light background */
+            display: flex; /* Flexbox for alignment */
+            align-items: center; /* Centers content vertically */
+            justify-content: center; /* Centers content horizontally */
+            padding: 0.2rem 0.2rem; /* Responsive padding */
+            transition: transform 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+            flex-grow: 0; /* Prevents it from stretching */
+            align-self: center; /* Keeps button centered */
+            margin: 1.313rem 0rem 0rem 0rem; /* Centers the button */
+            margin-top: 0.5rem;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        /* Button hover effect */
+        .social-box .button:hover {
+            background: #e0e0e0; /* Slightly darker background */
+            transform: scale(1.05); /* Slightly enlarges button */
+        }
+
+
+        /* Arrow Symbol Styling */
+        .arrow-symbol-4 {
+            display: flex; /* Ensures proper alignment */
+            align-items: center; /* Centers the arrow vertically */
+            justify-content: center; /* Centers the arrow horizontally */
+            width: 0.991rem; /* Fixed size for desktop */
+            height: 0.991rem; /* Fixed size for desktop */
+            background: #225C95; /* White background for the circle */
+            border-radius: 50%; /* Makes it a perfect circle */
+            margin-left: 0.438rem; /* Adds spacing between the text and the circle */
+            transition: transform 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+        }
+
+        /* Styling for the SVG/PNG inside .arrow-symbol-4 */
+        .arrow-symbol-4 img {
+            width: 0.6rem; /* Size of the icon */
+            height: 0.6rem; /* Size of the icon */
+            object-fit: contain; /* Ensures the image fits within the circle */
+        }
+
+        /* Hover Effect for Button with Arrow Symbol */
+        .button:hover .arrow-symbol-4 {
+            background: #225C95; /* Slightly darker white on hover */
+            transform: scale(1.1); /* Slightly enlarges the circle on hover */
+        }
+
+        /* YouTube Button */
+        .social-box.youtube-box .button {
+            background: #ef9595; /* Light red background */
+        }
+
+        /* Instagram Button */
+        .social-box.instagram-box .button {
+            background: #85aed6; /* Light blue background */
+        }
+
+        /* Telegram Button */
+        .social-box.telegram-box .button {
+            background: #90bfed; /* Light blue background */
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .social-boxes-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.675rem; /* Reduces gap for smaller screens */
+            }
+            .social-box {
+                width: calc(50% - 2rem); /* Two boxes in a row on mobile */
+                min-width: auto; /* Removes minimum width restriction */
+                padding: 0.40rem; /* Reduces padding for smaller screens */
+            }
+            
+            /* Specifically position the boxes */
+            .social-box.youtube-box {
+                order: 1; /* First row, first column */
+            }
+            
+            .social-box.instagram-box {
+                order: 2; /* First row, second column */
+            }
+            .social-box .header{
+                width: 107.5%;
+                position: relative;
+                top: -0.4rem;
+                left: 0.01rem;
+            } 
+            
+        }
+        @media (max-width: 500px) {
+            .social-boxes-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2.1rem;
+            }
+            .social-box {
+                width: calc(50% - 0.75rem);
+                margin-left: -0.8rem;
+                margin-right: -0.8rem;
+                position: relative;
+                top: 0.525rem;
+            }
+            
+            .social-box.youtube-box {
+                order: 1;
+            }
+            
+            .social-box.instagram-box {
+                order: 2;
+            }
+            .social-box .header{
+                width: 110%;
+                position: relative;
+                top: -0.4rem;
+                left: 0.01rem;
+            }
+            
+            .social-box .icon-text span {
+                font-size: 0.75rem;
+            }
+            .social-box .button{
+                width: 90%;
+            } 
+        }
+
+        /* For slightly larger mobile screens */
+        @media (max-width: 400px) {
+            .social-boxes-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2.1rem;
+                margin-top: -1.371rem;
+            }
+            .social-box {
+                width: calc(50% - 0.75rem);
+                margin-left: -0.6rem;
+                margin-right: -0.8rem;
+                position: relative;
+                top: 0.525rem;
+            }
+            
+            .social-box.youtube-box {
+                order: 1;
+            }
+            
+            .social-box.instagram-box {
+                order: 2;
+            }
+            .social-box .header{
+                width: 112%;
+                position: relative;
+                top: -0.4rem;
+            }
+            .social-box .icon-text {
+                position: relative;
+                margin: -0.525rem 0rem 0rem 1rem;
+            }
+            .social-box .icon-text span {
+                font-size: 0.75rem;
+            }
+            .social-box .button{
+                width: 90%;
+            }
+        }
+
+        /* Telegram Box Styles for Large Screens */
+        .social-box.telegram-box {
+            width: calc(33.33% - 1rem); /* Takes one-third of the container's width, minus gap */
+        }
+
+        /* Telegram Button Styles for Smaller Devices */
+        .telegram-button-container-2 {
+            display: none; /* Initially hidden on large screens */
+        }
+
+        @media (max-width: 768px) {
+            .social-box.telegram-box {
+                display: none; /* Hide the large screen Telegram box */
+            }
+
+            .telegram-button-container-2 {
+                display: flex;
+                justify-content: center; /* Centers the button horizontally */
+                width: 100%; /* Full width to ensure it spans across */
+                margin-top: 0.8rem; /* Spacing between groups */
+                order: 3; /* Ensures it comes after YouTube and Instagram */
+            }
+
+            /* Telegram Button Styling */
+            .telegram-button-2 {
+                width: 80%; /* Takes full width of the container */
+                max-width: 600px; /* Limits the maximum width for larger screens */
+                height: auto; /* Adjusts height based on content */
+                display: flex;
+                align-items: center; /* Vertically centers the content */
+                justify-content: space-between; /* Spaces out the content */
+                padding: 0.3rem 0.5rem; /* Further reduces padding for smaller screens */
+                background: #191919; /* Dark background color */
+                border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+                backdrop-filter: blur(10px); /* Blurred background effect */
+                border-radius: 2rem; /* Rounded corners */
+                color: white; /* Text color */
+                font-family: Arial, sans-serif;
+                font-size: 0.55rem; /* Further reduces font size for smaller screens */
+                font-weight: bold; /* Makes the text bold */
+                cursor: pointer; /* Pointer cursor on hover */
+                text-decoration: none; /* Removes underline from the link */
+                transition: transform 0.3s ease; /* Smooth hover effect */
+            }
+
+            .icon-name-alt {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: nowrap;
+                gap: 1rem;
+            }
+
+            .icon-name-alt .telegram-icon {
+                order: 1;
+                width: 0.675rem;
+                height: 0.675rem;
+                margin-left: -0.1rem;
+                margin-top: -1.2rem;
+            }
+            .icon-name-alt .name-text {
+                order: 2;
+                margin-left: 0.6rem;
+            }
+            
+            /* Box A Styling */
+            .box-a-2 {
+                display: flex;
+                align-items: center; /* Vertically centers the content */
+                justify-content: center; /* Horizontally centers the content */
+                padding: 0.40rem 0.40rem; /* Further reduces padding for smaller screens */
+                border-radius: 2rem; /* Rounded corners */
+                background: rgba(151, 151, 151, 0.2); /* Semi-transparent gray background */
+                border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+                font-family: Arial, sans-serif;
+                font-size: 0.50rem; /* Further reduces font size for smaller screens */
+                /* font-weight: bold; Makes the text bold */
+                color: white; /* Text color */
+                margin-left: auto; /* Pushes it to the right */
+                margin-right: 0.625rem; /* Reduces spacing between boxes */
+            }
+
+            /* Box B Styling */
+            .box-b-2 {
+                display: flex;
+                align-items: center; /* Vertically centers the content */
+                justify-content: space-between; /* Spaces out the content */
+                padding: 0.15rem 0.3rem; /* Further reduces padding for smaller screens */
+                border-radius: 2rem; /* Rounded corners */
+                background: #2F93F5; /* Blue background */
+                font-family: Arial, sans-serif;
+                font-size: 0.50rem; /* Further reduces font size for smaller screens */
+                /* font-weight: bold; Makes the text bold */
+                color: white; /* Text color */
+                cursor: pointer; /* Pointer cursor on hover */
+            }
+
+            .telegram-button-2:hover {
+                transform: scale(1.05); /* Slightly enlarges the button on hover */
+            }
+
+            .box-b-2 .arrow-symbol-2 {
+                height: 1.11031rem;
+                width: 1.11031rem; /* Further reduces size for smaller screens */
+                border-radius: 50%; /* Makes it a perfect circle */
+                background: #225C95;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 0.3rem;
+            }
+
+            .arrow-symbol-2 img {
+                width: 12px; /* Slightly reduced size for smaller screens */
+                height: 12px; /* Slightly reduced size for smaller screens */
+            }
+        }
+        @media (max-width: 500px) {
+            .telegram-button-container-2 {
+                position: relative;
+                top: -1rem;
+            } 
+            .telegram-button-2 {
+                width: 100%;
+                max-width: 600px;
+            }
+            .telegram-button-container-2 .icon-name-alt .telegram-icon {
+                width: 0.625rem;
+                height: 0.625rem;
+                margin-top: -1.2rem;
+                margin-right: 0.5rem;
+            }
+
+            .telegram-button-container-2 .icon-name-alt .name-text {
+                font-size: 0.75rem;
+                margin-right: 0.1rem;
+                margin-left: 0.1rem;
+            }
+            .telegram-button-container-2 .box-a-2 {
+                padding: 0.3rem 0.2rem 0.3rem 0.2rem;
+                margin: 0rem 0.2rem 0rem 0.2rem;
+            }
+        }
+        @media (max-width: 400px) {
+            .telegram-button-container-2 {
+                width: 100%;
+                position: relative;
+                top: -1rem;
+            } 
+            .telegram-button-2{
+                width: 100%;
+                max-width: 540px;
+            }
+            .telegram-button-container-2 .icon-name-alt .telegram-icon{
+                height: 0.625rem;
+                width: 0.625rem;
+            }
+            .telegram-button-container-2 .icon-name-alt .name-text {
+                font-size: 0.45rem;
+                margin-right: 0.1rem;
+            }
+            .telegram-button-container-2 .box-a-2 {
+                padding: 0.3rem 0.2rem 0.3rem 0.2rem;
+                margin: 0rem 0.2rem 0rem 0.2rem;
+            }
+            .telegram-button-container-2 .box-b-2 {
+                padding: 0.3rem 0.2rem 0.3rem 0.2rem;
+            }
+            .box-b-2 .arrow-symbol-2 img{
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+            .box-b-2 .arrow-symbol-2{
+                width: 0.8rem;
+                height: 0.8rem;
+                margin: 0rem 0rem 0rem 0.1rem;
+            }
+            .box-b-2 span{
+                font-size: 0.5rem;
+                /* padding: 0rem 0rem 0rem 0.1rem; */
+            }
+        }
+
+
+        /* Warm Regards Text Styling */
+        .community-box .warm-regards {
+            width: 100%; /* Takes 90% of the parent container's width */
+            max-width: 500px; /* Limits the maximum width for larger screens */
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem; /* Responsive font size */
+            font-weight: 300; /* Light font weight */
+            line-height: normal; /* Responsive line height */
+            text-align: center; /* Centers the text */
+            /* background: linear-gradient(180deg, #FFFFFF 49.92%, rgba(137, 137, 137, 0.98) 97.17%); */
+            -webkit-background-clip: text; /* Clips the gradient to the text */
+            color: #898989; /* Makes the text transparent to show the gradient */
+            position: relative;
+            top: -26.725rem;
+        }
+
+        @media (max-width: 400px) {
+            .community-box .warm-regards {
+                position: relative;
+                margin-top: -1.3rem;
+            }
+        }
+
+        /* Email Box Styling */
+        .community-box .email-box {
+            display: flex; /* Flexbox for internal alignment */
+            align-items: center; /* Centers content vertically */
+            gap: 0.5rem; /* Space between icon and text */
+            padding: 0.5rem 1rem; /* Responsive padding */
+            border-radius: 1.5rem; /* Rounded corners */
+            background: rgba(151, 151, 151, 0.24); /* Semi-transparent gray background */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Semi-transparent white border */
+            max-width: 400px; /* Limits the maximum width for larger screens */
+            position: relative;
+            top: -25.725rem;
+
+            color: #FFF;
+            text-align: center;
+            leading-trim: both;
+            text-edge: cap;
+            font-feature-settings: 'liga' off;
+            font-family: "Inter" sans-serif;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            text-decoration: none;
+        }
+
+
+        /* Email Icon Styling */
+        .community-box .email-box .email-icon {
+            width: 1.5rem; /* Responsive size */
+            height: 1.5rem; /* Responsive size */
+            background: url('Images/email-icon.svg') no-repeat center; /* Email icon */
+            background-size: contain; /* Ensures the icon fits */
+        }
+
+        /* Copyright Text Styling */
+        .community-box .copyright-text {
+            width: 100%; /* Takes 90% of the parent container's width */
+            max-width: 540px; /* Limits the maximum width for larger screens */
+            text-align: center; /* Centers the text */
+            position: relative;
+            top: -24.8rem;
+            color: #898989;
+            text-align: center;
+            leading-trim: both;
+            text-edge: cap;
+            font-family: "Inter" sans-serif;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            /* Warm Regards Text */
+            .community-box .warm-regards {
+                font-size: 0.875rem; /* Reduces font size for smaller screens */
+                line-height: 1.4; /* Adjusts line height for better readability */
+            }
+
+            /* Email Box */
+            .community-box .email-box {
+                padding: 0.25rem 0.75rem; /* Reduces padding for smaller screens */
+                gap: 0.25rem; /* Reduces gap between icon and text */
+            }
+
+            .community-box .email-box .email-icon {
+                width: 1.25rem; /* Further reduces size for smaller screens */
+                height: 1.25rem;
+            }
+            .community-box .email-box span {
+                font-size: 0.625;
+            }
+
+            /* Copyright Text */
+            .community-box .copyright-text {
+                font-size: 0.5rem; /* Reduces font size for smaller screens */
+                line-height: 1.4; /* Adjusts line height for better readability */
+            }
+        }
+        @media (max-width: 500px) {
+            .community-box .warm-regards {
+                font-size: 0.875rem;
+                line-height: normal;
+                position: relative;
+                margin-top: -1rem;
+            }
+            .community-box .copyright-text {
+                margin-bottom: 1rem 0rem 0rem 5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="large-box">
+        <!-- Logo -->
+        <img src="Images/autodraft-logo.svg" alt="Logo" class="logo">
+
+        <!-- Welcome Text -->
+        <div class="welcome-text">
+            <h1>Welcome <span>aboard</span></h1>
+            <p>Create Cartoon Stories For YouTube & Earn Millions</p>
+        </div>
+        <!-- start button -->
+        <div class="button-container">
+            <a href="https://autodraft.in/" target="_blank" class="button-first">
+                Create Animation
+                <!-- SVG Icon -->
+                <span class="arrow-symbol-1">
+                    <img src="Images/Vector.png" alt="Vector Icon" />
+                </span>
+            </a>
+        </div>
+        <!-- Video with Spotlight Effect -->
+        <div class="video-container">
+            <div class="background-light">
+                <img src="Images/ellipse-1.png" alt="no image found">
+            </div>
+            <video autoplay loop muted playsinline>
+                <source src="Images\farmer_girl.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Button Group -->
+        <div class="button-group">
+            <!-- YouTube Button -->
+            <a href="https://www.youtube.com/@autodraftai" target="_blank" class="button">
+                <div class="icon youtube-icon"></div>
+                <span>Autodraft AI</span>
+                <span class="arrow-symbol-2">
+                    <img src="Images/Vector.png" alt="Vector Icon">
+                </span>
+            </a>
+
+            <!-- Instagram Button -->
+            <a href="https://www.instagram.com/autodraftai" target="_blank" class="button">
+                <div class="icon instagram-icon"></div>
+                <span>@autodraftai</span>
+                <span class="arrow-symbol-2">
+                    <img src="Images/Vector.png" alt="Vector Icon">
+                </span>
+            </a>
+        </div>
+        <!-- Telegram Button -->
+        <div class="telegram-button-container">
+            <a href="https://t.me/autodraftai" target="_blank" class="telegram-button">
+                <div class="icon-name-1">
+                    <div class="telegram-icon"></div>
+                    <span class="tele-comp-name-1">Autodraft AI</span>
+                </div>
+                <div class="grouping-a-b">
+                    <div class="box-a">1500+ members</div>
+                    <div class="box-b">
+                        <span>View Group</span>
+                        <span class="arrow-symbol-2">
+                            <img src="Images/Vector.png" alt="Vector Icon">
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Built for Storytellers Box -->
+        <div class="built-for-storytellers-box">
+            <div class="star-icon"></div>
+            <span>Built for Storytellers</span>
+        </div>
+        
+        <!-- AI Tools Box -->
+        <div class="ai-tools-box">
+            <h3>Easy To Use Advanced AI<br>Tools For Your Workflows</h3>
+            <p>
+                We provide <span>Cutting Edge AI Tools</span> to help you <span>Create Premium <br>Cartoon Animations</span> for much lower costs and time of delivery
+            </p>
+        </div>
+
+        <!-- Video Grid Box -->
+        <div class="video-grid-container">
+            <!-- Top Left Video -->
+            <a href="https://youtu.be/-FJXnbaHuQI?si=-C-smFbY_VUh4Qpc" target="_blank" class="video-item">
+                <img src="Images/video-thumbnail-1.png" alt="Video 1 Thumbnail">
+            </a>
+
+            <!-- Top Right Video -->
+            <a href="https://youtu.be/6PqnNHxvWdA?si=8BKjt7BJspTjta47" target="_blank" class="video-item">
+                <img src="Images/video-thumbnail-2.png" alt="Video 2 Thumbnail">
+            </a>
+
+            <!-- Bottom Left Video -->
+            <a href="https://youtu.be/5Y27x1BrTe4?si=cej4olgP93sgRZlQ" target="_blank" class="video-item">
+                <img src="Images/video-thumbnail-3.png" alt="Video 3 Thumbnail">
+            </a>
+
+            <!-- Bottom Right Video -->
+            <a href="https://youtu.be/hbAp8CG8t9c?si=rJQqu0-VvqmtE-22" target="_blank" class="video-item">
+                <img src="Images/video-thumbnail-4.png" alt="Video 4 Thumbnail">
+            </a>
+        </div>
+
+        <!-- GIF Box -->
+        <div class="gif-box">
+            <!-- GIF for Desktop -->
+            <img src="Images\AI-bg Creator-desktop.gif" alt="Desktop GIF" class="desktop-gif">
+
+            <!-- GIF for Mobile -->
+            <img src="Images\AI-bg Creator-mobile.gif" alt="Mobile GIF" class="mobile-gif">
+        </div>
+
+        <!-- Two Boxes Below GIF Box -->
+        <div class="two-boxes-container">
+            <!-- First Box (Voice Over) -->
+            <div class="box-item voice-over-box">
+                <img src="Images/Voice-over.png" alt="Voice Over">
+            </div>
+
+            <!-- Second Box (AI Animation) -->
+            <div class="box-item ai-animation-box">
+                <img src="Images/AI-animation.png" alt="AI Animation">
+            </div>
+        </div>
+
+        <!-- AI Character Creator GIF Box -->
+        <div class="gif-AI-Character-Creator">
+            <!-- GIF for Desktop -->
+            <img src="Images/AI-Character-Creator-Desktop.gif" alt="AI Character Creator Desktop" class="desktop-gif">
+
+            <!-- GIF for Mobile -->
+            <img src="Images/AI-Character-Creator-Mobile.gif" alt="AI Character Creator Mobile" class="mobile-gif">
+        </div>
+
+        <!-- Text and Image Box -->
+        <div class="text-image-box">
+            <!-- Text -->
+            <div class="text">
+                Infinite Timeline To <span>Compile & Export</span> Your Videos In 2K/4K
+            </div>
+
+            <!-- Image -->
+            <div class="image">
+                <img src="Images/Infinite-Timeline (3).png" alt="Infinite Timeline">
+            </div>
+        </div>
+
+        <!-- Best AI Tool Box -->
+        <div class="best-ai-tool-box">
+            <!-- Text -->
+            <div class="text">
+                Best AI Animation Tool for <br> YouTubers and Storytellers
+            </div>
+
+            <!-- Button -->
+            <a href="https://autodraft.in" target="_blank" class="button">
+                Create Animation For Free
+                <span class="arrow-symbol-3">
+                    <img src="Images/Vector.png" alt="Vector Icon">
+                </span>
+            </a>
+        </div>
+
+        <!-- Final section -->
+        <div class="community-box">
+            <!-- background image -->
+            <div class="left-background">
+                <img src="Images/left-light.png" alt="image not found">
+            </div>
+            <div class="right-background">
+                <img src="Images/right-light.png" alt="image not found">
+            </div>
+            
+            <!-- Header Text -->
+            <div class="header-text">
+                Join our Community of 30,000+ <br>YouTubers and Storytellers
+            </div>
+
+            <!-- Three Social Boxes -->
+            <div class="social-boxes-container">
+                <!-- YouTube Box -->
+                <div class="social-box youtube-box">
+                    <div class="header" style="color: rgba(255, 255, 255, 0.90);">Full Tutorials</div>
+                    <div class="icon-text">
+                        <img src="Images/youtube-icon.svg" alt="YouTube Icon">
+                        <span>Autodraft AI</span>
+                    </div>
+                    <a href="https://www.youtube.com/@autodraftai" target="_blank" class="button" style="color: #691515;">Subscribe</a>
+                </div>
+
+                <!-- Instagram Box -->
+                <div class="social-box instagram-box">
+                    <div class="header" style="color: rgba(255, 255, 255, 0.90);">Quick Tips</div>
+                    <div class="icon-text">
+                        <img src="Images/instagram-icon.svg" alt="Instagram Icon">
+                        <span>@autodraftai</span>
+                    </div>
+                    <a href="https://www.instagram.com/autodraftai" target="_blank" class="button" style="color:#225C95">Follow</a>
+                </div>
+
+                <!-- Telegram Box -->
+                <!-- for large devices -->
+                <div class="social-box telegram-box">
+                    <div class="header" style="color: rgba(255, 255, 255, 0.90);">Doubt Solving</div>
+                    <div class="icon-text">
+                        <img src="Images/telegram-icon.svg" alt="Telegram Icon">
+                        <span>Autodraft AI</span>
+                    </div>
+                    <a href="https://t.me/autodraftai" target="_blank" class="button" style="color: #225C95">
+                        View Group
+                        <span class="arrow-symbol-4">
+                            <img src="Images/vector-w-b-rbg.png" alt="Vector Icon">
+                        </span>
+                    </a>
+                </div>
+                <!-- for small devices -->
+                <div class="telegram-button-container-2">
+                    <a href="https://t.me/autodraftai" target="_blank" class="telegram-button-2">
+                        <div class="icon-name-alt">
+                            <div class="telegram-icon">
+                                <img src="Images/Telegram-icon.svg" alt="icon-not-found">
+                            </div>
+                            <span class="name-text">Autodraft AI</span>
+                        </div>
+                        <div class="box-a-2">Doubt Solving</div>
+                        <div class="box-b-2">
+                            <span style="color: #225C95">View Group</span>
+                            <span class="arrow-symbol-2">
+                                <img src="Images/vector-w-b-rbg.png" alt="Vector Icon">
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Warm Regards Text -->
+            <div class="warm-regards">
+                Warm regards,<br>
+                Team AutoDraft
+            </div>
+
+            <!-- Email Box -->
+            <a href="mailto:team@autodraft.in" class="email-box">
+                <div class="email-icon"></div>
+                <span class="email-id">team@autodraft.in</span>
+            </a>
+
+            <!-- Copyright Text -->
+            <div class="copyright-text">
+                © 2023-2025 All rights reserved - Allbots Technologies Pvt Ltd®
+            </div>
+        </div>
+    </div>
+</body>
+</html>
